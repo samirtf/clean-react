@@ -1,7 +1,6 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es6",
     "lib": [
       "dom",
       "dom.Iterable",
@@ -19,7 +18,6 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": true
   },
   "include": [
