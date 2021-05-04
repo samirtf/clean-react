@@ -29,6 +29,6 @@
     "typescript": "^4.2.4"
   },
   "lint-staged": {
-    "*.{ts, tsx}": "eslint --cache --fix"
+    "*.{ts, tsx}": "eslint 'src/**' --cache --fix"
   }
 }
