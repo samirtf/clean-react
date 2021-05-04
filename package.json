@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +26,9 @@
     "lint-staged": "^10.5.4",
     "ts-jest": "^26.5.5",
     "typescript": "^4.2.4"
+  },
+  "lint-staged": {
+    "*.{ts, tsx}": "eslint --cache --fix",
+    "*.js": "eslint --cache --fix"
   }
 }
