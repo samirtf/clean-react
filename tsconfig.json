@@ -10,8 +10,13 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react",
-    "rootDir": "src",
     "baseUrl": "src",
+    "rootDir": "src",
+    "paths": {
+      "@data/*": ["./src/data/*"],
+      "@domain/*": ["./src/domain/*"]
+    },
+
     "allowJs": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
