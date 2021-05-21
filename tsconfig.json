@@ -14,7 +14,8 @@
     "rootDir": "src",
     "paths": {
       "@data/*": ["./src/data/*"],
-      "@domain/*": ["./src/domain/*"]
+      "@domain/*": ["./src/domain/*"],
+      "@infra/*": ["./src/infra/*"]
     },
 
     "allowJs": true,

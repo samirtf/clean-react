@@ -39,5 +39,9 @@
       "eslint 'src/**' --cache --fix",
       "npm run test:staged"
     ]
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^0.21.1"
   }
 }
