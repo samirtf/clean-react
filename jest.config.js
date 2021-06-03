@@ -16,9 +16,9 @@ module.exports = {
     'node_modules'
   ],
   coverageDirectory: 'coverage',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest'
+    '^.+\\.(ts|tsx|js)$': 'ts-jest'
   },
   moduleNameMapper
 }
