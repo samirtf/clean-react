@@ -2,12 +2,13 @@
 /* eslint-disable no-undef */
 const { pathsToModuleNameMapper } = require('ts-jest/utils')
 const { compilerOptions } = require('./tsconfig.json')
-const moduleNameMapper = pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' })
+const tsconfigModuleNameMapper = pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' })
 
 module.exports = {
   roots: ['<rootDir>/'],
   collectCoverageFrom: [
-    '<rootDir>/**/*.{ts, tsx}'
+    '<rootDir>/**/*.{ts, tsx}',
+    '!**/*.d.ts'
   ],
   moduleDirectories: [
     '.',
@@ -16,9 +17,12 @@ module.exports = {
     'node_modules'
   ],
   coverageDirectory: 'coverage',
-  testEnvironment: 'node',
+  testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest'
+    '^.+\\.(ts|tsx|js)$': 'ts-jest'
   },
-  moduleNameMapper
+  moduleNameMapper: {
+    tsconfigModuleNameMapper,
+    '\\.scss$': 'identity-obj-proxy'
+  }
 }
