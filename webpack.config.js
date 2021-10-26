@@ -1,6 +1,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 module.exports = {
+  context: __dirname,
   mode: 'development',
   entry: './src/main/index.tsx',
   output: {
@@ -9,8 +10,9 @@ module.exports = {
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', 'scss'],
+    extensions: ['.ts', '.tsx', '.js', '.scss'],
     alias: {
+      presentation: path.resolve(__dirname, 'src', 'presentation'),
       '@': path.join(__dirname, 'src')
     }
   },
@@ -18,7 +20,7 @@ module.exports = {
     rules: [{
       test: /\.ts(x?)$/,
       loader: 'ts-loader',
-      excludes: /node_modules/
+      exclude: /node_modules/
     }, {
       test: /\.scss$/,
       use: [{
@@ -36,7 +38,10 @@ module.exports = {
   devServer: {
     contentBase: './public',
     writeToDisk: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    headers: {
+      'Cache-Control': 'no-store'
+    }
   },
   externals: {
     react: 'React',
